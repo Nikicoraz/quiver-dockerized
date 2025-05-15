@@ -1,3 +1,6 @@
+Quiver with an added Dockerfile to build a python alpine docker image.  
+The webserver is hosted using python on the `8080` port.
+
 # quiver: a modern commutative diagram editor
 
 [![quiver](screenshots/title.png "quiver: a modern commutative diagram editor")](https://q.uiver.app)
