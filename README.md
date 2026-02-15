@@ -6,16 +6,24 @@ The webserver is hosted using python on the `8080` port.
 [![quiver](screenshots/title.png "quiver: a modern commutative diagram editor")](https://q.uiver.app)
 
 **quiver** is a modern, graphical editor for [commutative] and [pasting diagrams], capable of
-rendering high-quality diagrams for screen viewing, and exporting to LaTeX via [tikz-cd].
+rendering high-quality diagrams for screen viewing, and exporting to [LaTeX] via [tikz-cd] or
+[Typst] via [fletcher].
 
 Creating and modifying diagrams with **quiver** is orders of magnitude faster than writing the
-equivalent LaTeX by hand and, with a little experience, competes with pen-and-paper.
+equivalent LaTeX or Typst by hand and, with a little experience, competes with pen-and-paper. To
+learn how to use **quiver** efficiently, see the [tutorial](tutorial.md).
 
 [commutative]: https://en.wikipedia.org/wiki/Commutative_diagram
 [pasting diagrams]: https://ncatlab.org/nlab/show/pasting+diagram
+[LaTeX]: https://www.latex-project.org/
 [tikz-cd]: https://github.com/astoff/tikz-cd
+[Typst]: https://typst.app/
+[fletcher]: https://typst.app/universe/package/fletcher/
 
 Try **quiver** out: [q.uiver.app](https://q.uiver.app)
+
+For tips on using **quiver** (including how to create and modify diagrams entirely using the
+keyboard), see the [**quiver** tutorial](tutorial.md).
 
 ## Features & screenshots
 
@@ -46,8 +54,8 @@ And full use of colour for labels and arrows.
 
 [![Screenshot mode](screenshots/grid-hidden.png "Screenshot mode")](https://q.uiver.app/?q=WzAsOCxbMCwwLCJHeCJdLFsxLDAsIkZ4Il0sWzIsMCwiR3giXSxbMywwLCJGeCJdLFswLDEsIkd5Il0sWzEsMSwiRnkiXSxbMiwxLCJHeSJdLFszLDEsIkZ5Il0sWzAsMSwiXFxiZXRhX3giXSxbMSwyLCJcXGFscGhhX3giXSxbMiwzLCJcXGJldGFfeCJdLFswLDQsIkdmIiwyXSxbNCw1LCJcXGJldGFfeSIsMl0sWzUsNiwiXFxhbHBoYV95IiwyXSxbNiw3LCJcXGJldGFfeSIsMl0sWzMsNywiRmYiXSxbMSw1LCJGZiIsMV0sWzIsNiwiR2YiLDFdLFs0LDEsIlxcYmV0YV9mIiwwLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwibGV2ZWwiOjJ9XSxbNSwyLCJcXGFscGhhX2YiLDAseyJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9LCJsZXZlbCI6Mn1dLFs2LDMsIlxcYmV0YSdmIiwwLHsic2hvcnRlbiI6eyJzb3VyY2UiOjIwLCJ0YXJnZXQiOjIwfSwibGV2ZWwiOjJ9XSxbMCwyLCIxIiwwLHsiY3VydmUiOi00fV0sWzUsNywiMSIsMix7ImN1cnZlIjo0fV0sWzEsMjEsIlxcdmFyZXBzaWxvbl94IiwwLHsic2hvcnRlbiI6eyJ0YXJnZXQiOjMwfX1dLFsyMiw2LCJcXGV0YV95IiwyLHsic2hvcnRlbiI6eyJzb3VyY2UiOjMwfX1dXQ==)
 
-**quiver** is intended to look good for screenshots, as well as to export LaTeX that looks as close
-as possible to the original diagram.
+**quiver** is intended to look good for screenshots, as well as to export LaTeX and Typst that looks
+as close as possible to the original diagram.
 
 [![Keyboard hints](screenshots/hints.png "Keyboard hints")](https://q.uiver.app/?q=WzAsMixbMCwwLCJBIl0sWzEsMCwiQiJdLFswLDEsImYiXV0=)
 
@@ -55,7 +63,7 @@ Diagrams may be created and modified using either the mouse, by clicking and dra
 
 [![Export to LaTeX](screenshots/export.png "Export to LaTeX")](https://q.uiver.app/?q=WzAsOCxbMCwwLCJHeCJdLFsxLDAsIkZ4Il0sWzIsMCwiR3giXSxbMywwLCJGeCJdLFswLDEsIkd5Il0sWzEsMSwiRnkiXSxbMiwxLCJHeSJdLFszLDEsIkZ5Il0sWzAsMSwiXFxiZXRhX3giXSxbMSwyLCJcXGFscGhhX3giXSxbMiwzLCJcXGJldGFfeCJdLFswLDQsIkdmIiwyXSxbNCw1LCJcXGJldGFfeSIsMl0sWzUsNiwiXFxhbHBoYV95IiwyXSxbNiw3LCJcXGJldGFfeSIsMl0sWzMsNywiRmYiXSxbMSw1LCJGZiIsMV0sWzIsNiwiR2YiLDFdLFs0LDEsIlxcYmV0YV9mIiwwLHsibGVuZ3RoIjo1MCwibGV2ZWwiOjJ9XSxbNSwyLCJcXGFscGhhX2YiLDAseyJsZW5ndGgiOjUwLCJsZXZlbCI6Mn1dLFs2LDMsIlxcYmV0YSdmIiwwLHsibGVuZ3RoIjo1MCwibGV2ZWwiOjJ9XSxbMCwyLCIxIiwwLHsiY3VydmUiOi00fV0sWzUsNywiMSIsMix7ImN1cnZlIjo0fV0sWzEsMjEsIlxcdmFyZXBzaWxvbl94IiwwLHsibGVuZ3RoIjo1MH1dLFsyMiw2LCJcXGV0YV95IiwyLHsibGVuZ3RoIjo1MH1dXQ==)
 
-When you export diagrams to LaTeX, **quiver** will embed a link to the diagram, which will allow you
+When you export diagrams to LaTeX or Typst, **quiver** will embed a link to the diagram, which will allow you
 to return to it later if you decide it needs to be modified, or to share it with others.
 
 ### Other features
@@ -65,26 +73,6 @@ to return to it later if you decide it needs to be modified, or to share it with
 - Export embeddable diagrams to HTML.
 - Panning and zooming, for large diagrams.
 - Smart label alignment and edge offset.
-
-## Importing macros and colours
-
-To use custom macros and colours in **quiver**, create a file containing the definitions, like the
-following.
-
-```latex
-\newcommand{\cat}{\mathscr}
-\newcommand{\psh}{\widehat}
-\newcommand{\smcat}{\mathbb}
-\newcommand{\yo}{よ}
-```
-
-Upload the file to a publicly accessible URL (for instance,
-[gist.github.com](https://gist.github.com/)), and paste the URL for the raw text into the "Macros"
-input at the bottom of **quiver**.
-
-Currently, macros may be defined using `\newcommand`, `\newcommand*`, `\renewcommand`,
-`\renewcommand*`, `\DeclareMathOperator`, and `\DeclareMathOperator*`; and colours may be defined
-using `\definecolor` (using the colour modes: `rgb`, `RGB`, `HTML`, `gray`).
 
 ## Editor integration
 
@@ -102,9 +90,9 @@ error telling you that KaTeX failed to load.
 **quiver** must be run through `localhost`. If you have Python installed, an easy solution is to
 run:
 ```
-python3 -m http.server
+make serve
 ```
-in the **quiver** `src` directory and then open `localhost:8000` in browser.
+in the **quiver** directory and then open `localhost:8000` in browser.
 
 If you have any other problems building **quiver**, [open an
 issue](https://github.com/varkor/quiver/issues/new) detailing the problem and I'll try to help.
@@ -114,8 +102,12 @@ issue](https://github.com/varkor/quiver/issues/new) detailing the problem and I'
 aesthetic rendering of arrows.
 - [AndréC](https://tex.stackexchange.com/users/138900/andr%c3%a9c), for the custom TikZ style for
 curves of a fixed height.
+- [Andrew Stacey](https://tex.stackexchange.com/users/86/andrew-stacey), for the custom TikZ style
+for shortened curves.
+- [Théophile Cailliau](https://github.com/tjbcg), for implementing Typst support.
 - [Nathan Corbyn](https://github.com/doctorn), for adding the ability to export embeddable diagrams
 to HTML.
 - [Paolo Brasolin](https://github.com/paolobrasolin), for adding offline support.
 - [Carl Davidson](https://github.com/davidson16807), for discussing and prototyping loop rendering.
-- Everyone who has improved **quiver** by reporting issues or suggesting improvements.
+- Everyone who has improved **quiver** by submitting pull requests, reporting issues or suggesting
+  improvements.
